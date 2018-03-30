@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploFileImport", "EmploFileImport.csproj", "{5A8DB42B-5241-4342-BA24-8BC3FCDEF292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploApiSDK", "emploApiSdk\EmploApiSDK.csproj", "{462582B3-F430-4B0E-8E8A-E11005E05D2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A8DB42B-5241-4342-BA24-8BC3FCDEF292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8DB42B-5241-4342-BA24-8BC3FCDEF292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8DB42B-5241-4342-BA24-8BC3FCDEF292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8DB42B-5241-4342-BA24-8BC3FCDEF292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462582B3-F430-4B0E-8E8A-E11005E05D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462582B3-F430-4B0E-8E8A-E11005E05D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462582B3-F430-4B0E-8E8A-E11005E05D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462582B3-F430-4B0E-8E8A-E11005E05D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5182323-7789-473B-BBA7-86A79A9785AF}
+	EndGlobalSection
+EndGlobal
