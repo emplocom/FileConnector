@@ -33,21 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IdentityModel.1.11.0\lib\net45\IdentityModel.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileParser.cs" />
-    <Compile Include="ImportLogic.cs" />
+    <Compile Include="EmployeeFileImportLogic.cs" />
     <Compile Include="Mappings\ApiRequestModelBuilder.cs" />
     <Compile Include="Mappings\AttributeMapping.cs" />
     <Compile Include="Mappings\AttributeMappingElement.cs" />
@@ -62,12 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmploApiSDK\EmploApiSDK.csproj">
+    <ProjectReference Include="emploApiSdk\EmploApiSDK.csproj">
       <Project>{462582b3-f430-4b0e-8e8a-e11005e05d2e}</Project>
       <Name>EmploApiSDK</Name>
     </ProjectReference>

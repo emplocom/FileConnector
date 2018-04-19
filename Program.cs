@@ -32,8 +32,8 @@ namespace EmploFileImport
 
                 if(importFileExists)
                 {
-                    ImportLogic importLogic = new ImportLogic(logger);
-                    await importLogic.Import(filePath);
+                    EmployeeFileImportLogic employeeFileImportLogic = new EmployeeFileImportLogic(logger);
+                    await employeeFileImportLogic.Import(filePath);
                     Console.WriteLine("Job's done. Press any key");
                 }
                 else

@@ -1,4 +1,4 @@
-using EmploApiSDK.Models;
+using EmploApiSDK.ApiModels.Employees;
 using EmploFileImport.Models;
 using EmploApiSDK.Logger;
 
