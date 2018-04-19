@@ -26,14 +26,14 @@ namespace EmploFileImport
                 importFileExists = true;
                 filePath = "import.txt";
 #endif
-#if RELEASE
+#if !DEBUG
                 importFileExists = args.Any() && (filePath = TryGettingFilePath(args[0])) != string.Empty;
 #endif
 
-                if(importFileExists)
+                if (importFileExists)
                 {
-                    ImportLogic importLogic = new ImportLogic(logger);
-                    await importLogic.Import(filePath);
+                    EmployeeFileImportLogic employeeFileImportLogic = new EmployeeFileImportLogic(logger);
+                    await employeeFileImportLogic.Import(filePath);
                     Console.WriteLine("Job's done. Press any key");
                 }
                 else
