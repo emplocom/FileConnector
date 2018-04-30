@@ -30,9 +30,11 @@ namespace EmploFileImport
             try
             {
                 var importMode = ConfigurationManager.AppSettings["ImportMode"];
-                var requireRegistrationForNewEmployees = ConfigurationManager.AppSettings["RequireRegistrationForNewEmployees"];
+                var requireRegistrationForNewEmployees =
+                    ConfigurationManager.AppSettings["RequireRegistrationForNewEmployees"];
 
-                ImportUsersRequestModel importUsersRequestModel = BuildRequestModel(importMode, requireRegistrationForNewEmployees, filePath);
+                ImportUsersRequestModel importUsersRequestModel =
+                    BuildRequestModel(importMode, requireRegistrationForNewEmployees, filePath);
                 DryRunIfSet(importUsersRequestModel);
                 var result = await _importLogic.ImportEmployees(importUsersRequestModel);
                 if (result == -1)
@@ -40,9 +42,13 @@ namespace EmploFileImport
                     Environment.Exit(-1);
                 }
             }
+            catch (EmploApiClientFatalException)
+            {
+                Environment.Exit(-1);
+            }
             catch(Exception exception)
             {
-                _logger.WriteLine(exception.Message);
+                _logger.WriteLine(exception.Message, LogLevelEnum.Error);
             }
         }
 

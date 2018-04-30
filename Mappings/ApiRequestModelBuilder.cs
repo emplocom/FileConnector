@@ -1,3 +1,4 @@
+using System;
 using EmploApiSDK.ApiModels.Employees;
 using EmploFileImport.Models;
 using EmploApiSDK.Logger;
@@ -10,7 +11,14 @@ namespace EmploFileImport.Mappings
 
         public ApiRequestModelBuilder(ILogger logger)
         {
-            _fileImportMappingConfiguration = new FileImportMappingConfiguration(logger);
+            try
+            {
+                _fileImportMappingConfiguration = new FileImportMappingConfiguration(logger);
+            }
+            catch (EmploApiClientFatalException)
+            {
+                Environment.Exit(-1);
+            }
         }
 
         public UserDataRow BuildUserDataRow(ValuesRow rowValues)
@@ -21,7 +29,7 @@ namespace EmploFileImport.Mappings
             {
                 foreach(var mapping in _fileImportMappingConfiguration.PropertyMappings)
                 {
-                    if(NormalizeString(mapping.FileHeaderName) == NormalizeString(item.HeaderName))
+                    if(NormalizeString(mapping.ExternalPropertyName) == NormalizeString(item.HeaderName))
                     {
                         importedEmployeeRow.Add(mapping.EmploPropertyName, NormalizeString(item.Value));
                     }
